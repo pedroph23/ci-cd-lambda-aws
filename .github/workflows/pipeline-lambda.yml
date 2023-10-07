@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create ZIP file
+        run: zip -r code.zip .
+
       - name: Deploy to Lambda
         run: |
           aws lambda update-function-code --function-name app --zip-file fileb://./
